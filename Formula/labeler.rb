@@ -5,7 +5,28 @@ class Labeler < Formula
   # sha256 "26c5d47adbd0ed7d0a0d9f8a33a25bc242f7cdff2a661d8d6211f5279ca995d4"
 
   def install
-    bin.install "labeler"
+    os = `uname -s`.strip.downcase
+    arch = `uname -m`.strip.downcase
+
+    case "#{os}_#{arch}"
+    when "linux_386"
+      bin.install "labeler-linux-386" => "labeler"
+    when "linux_amd64"
+      bin.install "labeler-linux-amd64" => "labeler"
+    when "linux_arm"
+      bin.install "labeler-linux-arm" => "labeler"
+    when "linux_arm64"
+      bin.install "labeler-linux-arm64" => "labeler"
+    when "darwin_amd64", "darwin_arm64"
+      # bin.install "labeler-darwin-arm64" => "labeler"
+      bin.install "labeler" => "labeler"
+    when "windows_386"
+      bin.install "labeler-windows-386.exe" => "labeler.exe"
+    else
+      odie "Unsupported architecture: #{os}_#{arch}"
+    end
+    
+    # bin.install "labeler"
   end
 
   test do
