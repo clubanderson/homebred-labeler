@@ -13,6 +13,8 @@ class Labeler < Formula
       bin.install "labeler-linux-386" => "labeler"
     when "linux_amd64"
       bin.install "labeler-linux-amd64" => "labeler"
+    when "linux_x86_64"
+      bin.install "labeler-linux-amd64" => "labeler"      
     when "linux_arm"
       bin.install "labeler-linux-arm" => "labeler"
     when "linux_arm64"
