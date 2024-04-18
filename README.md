@@ -2,6 +2,7 @@
 
 ```
 brew tap clubanderson/labeler
+brew update
 brew install labeler
 ```
 
