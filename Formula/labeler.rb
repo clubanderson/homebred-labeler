@@ -16,6 +16,8 @@ class Labeler < Formula
     case Hardware::CPU.arch
     when :arm64
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm64"
+    when :arm
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm"
     when :x86_64
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-amd64"
     # when :ppc64
