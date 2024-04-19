@@ -1,7 +1,7 @@
 class Labeler < Formula
   desc "Utility that automates the labeling of resources output from kubectl, kustomize, and helm"
   homepage "https://github.com/clubanderson/labeler"
-  url "https://github.com/clubanderson/labeler/releases/download/v0.18.3/labeler"
+  url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler"
   # sha256 "26c5d47adbd0ed7d0a0d9f8a33a25bc242f7cdff2a661d8d6211f5279ca995d4"
 
   def install
@@ -19,9 +19,10 @@ class Labeler < Formula
       bin.install "labeler-linux-arm" => "labeler"
     when "linux_arm64"
       bin.install "labeler-linux-arm64" => "labeler"
-    when "darwin_amd64", "darwin_arm64"
-      # bin.install "labeler-darwin-arm64" => "labeler"
-      bin.install "labeler" => "labeler"
+    when "darwin_arm64"
+      bin.install "labeler-darwin-arm64" => "labeler"
+    when "darwin_amd64"
+      bin.install "labeler-darwin-amd64" => "labeler"
     when "windows_386"
       bin.install "labeler-windows-386.exe" => "labeler.exe"
     else
