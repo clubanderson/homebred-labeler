@@ -10,33 +10,35 @@ class Labeler < Formula
     when :arm64
       url "#{url_base}/labeler-darwin-arm64"
     when :x86_64
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-darwin-amd64"
+      url "#{url_base}/labeler-darwin-amd64"
     else
       odie "Unsupported architecture #{Hardware::CPU.arch} on macOS"
     end
   elsif OS.linux?
     case Hardware::CPU.arch
     when :arm64
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm64"
+      url "#{url_base}/labeler-linux-arm64"
     when :arm
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm"
+      url "#{url_base}/labeler-linux-arm"
     when :x86_64
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-amd64"
+      url "#{url_base}/labeler-linux-amd64"
     when :i386
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-386"
-    # when :ppc64
-    #   url ""
-    # when :s390x
-    #   url ""
+      url "#{url_base}/labeler-linux-386"
+    when :ppc64
+      url "#{url_base}/labeler-linux-ppc64"
+    when :ppc64le
+      url "#{url_base}/labeler-linux-ppc64le"
+    when :s390x
+      url "#{url_base}/labeler-linux-s390x"
     else
       odie "Unsupported architecture #{Hardware::CPU.arch} on Linux"
     end
   elsif OS.windows?
     case Hardware::CPU.arch
     when :amd64
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-amd64.exe"
+      url "#{url_base}/labeler-windows-amd64.exe"
     when :i386
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-386.exe"
+      url "#{url_base}/labeler-windows-386.exe"
     else
       odie "Unsupported architecture: #{Hardware::CPU.arch} on Windows"
     end
