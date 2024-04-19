@@ -1,10 +1,43 @@
 class Labeler < Formula
   desc "Utility that automates the labeling of resources output from kubectl, kustomize, and helm"
   homepage "https://github.com/clubanderson/labeler"
-  url "https://github.com/clubanderson/labeler/archive/refs/tags/v0.18.4.tar.gz"
-  # url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler"
-  # sha256 "26c5d47adbd0ed7d0a0d9f8a33a25bc242f7cdff2a661d8d6211f5279ca995d4"
+  version "v0.18.4"
 
+  if OS.mac?
+    case Hardware::CPU.arch
+    when :arm64
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-darwin-arm64"
+    when :x86_64
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-darwin-amd64"
+    else
+      odie "Unsupported architecture on macOS"
+    end
+  elsif OS.linux?
+    case Hardware::CPU.arch
+    when :arm64
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm64"
+    when :x86_64
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-amd64"
+    # when :ppc64
+    #   url ""
+    # when :s390x
+    #   url ""
+    else
+      odie "Unsupported architecture on Linux"
+    end
+  elsif OS.windows?
+    case Hardware::CPU.arch
+    wh
+  else
+    odie "Unsupported operating system"
+  end
+
+  license "Apache-2.0"
+
+  if system("which kubectl &> /dev/null")
+    depends_on "kubectl"
+  end
+  
   def install
     os = `uname -s`.strip.downcase
     arch = `uname -m`.strip.downcase
