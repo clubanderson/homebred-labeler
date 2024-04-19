@@ -100,7 +100,9 @@ class Labeler < Formula
   # After installing, create aliases for convenience
   def caveats
     <<~EOS
-      To make using labeler more convenient, consider creating aliases:
+      Labeler enables labeling of ALL kubectl, kustomize, and helm objects, inline, without extra steps. This includes all cluster and namespace scoped objects.
+      
+      To make using labeler more convenient, consider creating aliases in your ~/.bashrc or ~/.zshrc file:
       \e[33malias k="labeler kubectl"\e[0m
       \e[33malias h="labeler helm"\e[0m
 
@@ -114,7 +116,7 @@ class Labeler < Formula
 
       example (kustomize):
 
-         k apply -k examples/kustomize \e[33m-l app.kubernetes.io/part-of=sample-app\e[0m --context=kind-kind --namespace=temp --overwrite
+         k apply -k examples/kustomize \e[33m-l app.kubernetes.io/part-of=sample-app\e[0m --context=kind-kind --namespace=default --overwrite
 
       example (helm):
 
@@ -125,6 +127,7 @@ class Labeler < Formula
         k --l-help
 
       For more information, or to make labeler better, visit the readme at \e[33mhttps://github.com/clubanderson/labeler\e[0m
+      You can also quickly build your own plugins for labeler to do just about anything post-kubectl or post-helm operation.
     EOS
   end
 end
