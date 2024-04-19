@@ -29,12 +29,12 @@ class Labeler < Formula
     else
       odie "Unsupported architecture on Linux"
     end
-  elsif OS.windows?
-    case Hardware::CPU.arch
-    when :386
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-386"
-    else
-      odie "Unsupported architecture on Windows"
+  # elsif OS.windows?
+  #   case Hardware::CPU.arch
+  #   when :386
+  #     url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-386"
+  #   else
+  #     odie "Unsupported architecture on Windows"
   else
     odie "Unsupported operating system"
   end
