@@ -33,7 +33,7 @@ class Labeler < Formula
     case Hardware::CPU.arch
     when :amd64
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-amd64.exe"
-    when :386
+    when :i386
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-386.exe"
     else
       odie "Unsupported architecture: #{Hardware::CPU.arch} on Windows"
