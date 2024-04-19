@@ -25,9 +25,9 @@ class Labeler < Formula
     else
       odie "Unsupported architecture on Linux"
     end
-  elsif OS.windows?
-    case Hardware::CPU.arch
-    wh
+  # elsif OS.windows?
+  #   case Hardware::CPU.arch
+  #   wh
   else
     odie "Unsupported operating system"
   end
