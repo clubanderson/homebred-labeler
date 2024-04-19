@@ -1,7 +1,7 @@
 class Labeler < Formula
   desc "Utility that automates the labeling of resources output from kubectl, kustomize, and helm"
   homepage "https://github.com/clubanderson/labeler"
-  version "v0.18.4"
+  version "v0.18.5"
 
   url_base = "https://github.com/clubanderson/labeler/releases/download/#{version}"
 
