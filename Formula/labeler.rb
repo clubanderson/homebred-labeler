@@ -10,7 +10,7 @@ class Labeler < Formula
     when :x86_64
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-darwin-amd64"
     else
-      odie "Unsupported architecture on macOS"
+      odie "Unsupported architecture #{Hardware::CPU.arch} on macOS"
     end
   elsif OS.linux?
     case Hardware::CPU.arch
@@ -27,14 +27,17 @@ class Labeler < Formula
     # when :s390x
     #   url ""
     else
-      odie "Unsupported architecture on Linux"
+      odie "Unsupported architecture #{Hardware::CPU.arch} on Linux"
     end
-  # elsif OS.windows?
-  #   case Hardware::CPU.arch
-  #   when :386
-  #     url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-386"
-  #   else
-  #     odie "Unsupported architecture on Windows"
+  elsif OS.windows?
+    case Hardware::CPU.arch
+    when :amd64
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-amd64.exe"
+    when :386
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-windows-386.exe"
+    else
+      odie "Unsupported architecture: #{Hardware::CPU.arch} on Windows"
+    end
   else
     odie "Unsupported operating system"
   end
