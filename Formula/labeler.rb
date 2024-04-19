@@ -18,6 +18,8 @@ class Labeler < Formula
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm64"
     when :arm
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-arm"
+    when :386
+      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-386"
     when :x86_64
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-linux-amd64"
     # when :ppc64
