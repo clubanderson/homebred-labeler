@@ -22,6 +22,8 @@ class Labeler < Formula
       url "#{url_base}/labeler-linux-arm32"
     when :arm
       url "#{url_base}/labeler-linux-arm"
+    when :armv7
+      url "#{url_base}/labeler-linux-armv7"
     when :x86_64
       url "#{url_base}/labeler-linux-amd64"
     when :i386
