@@ -127,7 +127,7 @@ class Labeler < Formula
         k --l-help
 
       For more information, or to make labeler better, visit the readme at \e[33mhttps://github.com/clubanderson/labeler\e[0m
-      You can also quickly build your own plugins for labeler to do just about anything post-kubectl or post-helm operation.
+      You can also quickly build your own plugins for labeler to do just about anything post-kubectl or post-helm operation. Plugin example: https://github.com/clubanderson/labeler-plugin-remote-deploy
     EOS
   end
 end
