@@ -18,6 +18,8 @@ class Labeler < Formula
     case Hardware::CPU.arch
     when :arm64
       url "#{url_base}/labeler-linux-arm64"
+    when :arm32
+      url "#{url_base}/labeler-linux-arm32"
     when :arm
       url "#{url_base}/labeler-linux-arm"
     when :x86_64
