@@ -42,6 +42,15 @@ class Labeler < Formula
     else
       odie "Unsupported architecture: #{Hardware::CPU.arch} on Windows"
     end
+  elsif OS.freebsd?
+    case Hardware::CPU.arch
+    # when :amd64
+    #   url "#{url_base}/labeler-freebsd-amd64"
+    when :i386
+      url "#{url_base}/labeler-freebsd-386"
+    else
+      odie "Unsupported architecture: #{Hardware::CPU.arch} on FreeBSD"
+    end
   else
     odie "Unsupported operating system"
   end
