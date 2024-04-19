@@ -3,10 +3,12 @@ class Labeler < Formula
   homepage "https://github.com/clubanderson/labeler"
   version "v0.18.4"
 
+  url_base = "https://github.com/clubanderson/labeler/releases/download/#{version}"
+
   if OS.mac?
     case Hardware::CPU.arch
     when :arm64
-      url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-darwin-arm64"
+      url "#{url_base}/labeler-darwin-arm64"
     when :x86_64
       url "https://github.com/clubanderson/labeler/releases/download/v0.18.4/labeler-darwin-amd64"
     else
